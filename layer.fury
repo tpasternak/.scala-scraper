@@ -1,8 +1,55 @@
 version	1
 schemas	default	id	default
-		projects	
-		repos	
-		imports	
-		main	None
+		projects	scala-scraper	id	scala-scraper
+				modules	scraper	id	scraper
+						kind	library
+						main	None
+						manifest	
+						compiler	projectId	scala
+							moduleId	compiler
+							intransitive	true
+						after	
+						params	
+						sources	scala-scraper:core/src/main/scala/net/ruippeixotog/scalascraper	scala-scraper:core/src/main/scala/net/ruippeixotog/scalascraper
+						binaries	commons-io:commons-io:2.6	binRepo	central
+								group	commons-io
+								artifact	commons-io
+								version	2.6
+							joda-time:joda-time:2.10.1	binRepo	central
+								group	joda-time
+								artifact	joda-time
+								version	2.10.1
+							net.sourceforge.htmlunit:htmlunit:2.29	binRepo	central
+								group	net.sourceforge.htmlunit
+								artifact	htmlunit
+								version	2.29
+							org.apache.httpcomponents:httpclient:4.5.6	binRepo	central
+								group	org.apache.httpcomponents
+								artifact	httpclient
+								version	4.5.6
+							org.jsoup:jsoup:1.11.3	binRepo	central
+								group	org.jsoup
+								artifact	jsoup
+								version	1.11.3
+							org.scalaz:scalaz-core_2.12:7.2.18	binRepo	central
+								group	org.scalaz
+								artifact	scalaz-core_2.12
+								version	7.2.18
+						resources	
+						bloopSpec	None
+				main	Some	scraper
+				license	unknown
+				description	
+		repos	base	id	base
+				repo	https://github.com/propensive/base.git
+				refSpec	master
+				local	None
+			scala-scraper	id	scala-scraper
+				repo	https://github.com/ruippeixotog/scala-scraper.git
+				refSpec	v2.1.0
+				local	None
+		imports	base:2.12.6	repo	base
+				schema	2.12.6
+		main	Some	scala-scraper
 main	default
 aliases	
